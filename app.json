@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "FieldTask",
+    "slug": "fieldtask-rn",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "fieldtask",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "com.candidate.fieldtask",
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#245DF5"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow FieldTask to attach task photos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "defaultChannel": "task-reminders"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow FieldTask to use your location to fill task coordinates."
+        }
+      ],
+      "./plugins/withReleaseSigning"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "bundleIdentifier": "com.candidate.fieldtask"
+    }
+  }
+}

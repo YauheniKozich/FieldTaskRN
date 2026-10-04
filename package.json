@@ -1,0 +1,62 @@
+{
+  "name": "fieldtask-rn",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "lint": "eslint app src tests plugins scripts --max-warnings 0",
+    "format:check": "prettier --check src/store/useTaskStore.ts src/repositories/taskRepository.ts src/features/sync/syncCoordinator.ts src/features/reminders/reminderCoordinator.ts src/features/map/mapHtml.ts src/storage/database.ts src/platform/attachments/attachmentService.ts src/platform/notifications/notificationService.ts src/domain/tasks/taskDate.ts src/domain/reminders/reminderSchedule.ts plugins/withReleaseSigning.js scripts/generate-map-assets.cjs scripts/patch-query-string.cjs tests/taskDate.test.ts tests/reminderCoordinator.test.ts tests/syncCoordinator.test.ts tests/taskStore.test.ts tests/mapHtml.test.ts tests/databaseMutations.test.ts tests/databaseMigration.test.ts tests/releaseSigningPlugin.test.ts tests/routerDependencyCompat.test.ts",
+    "prepare-map": "node scripts/generate-map-assets.cjs",
+    "server": "json-server server/db.json --host 0.0.0.0 --port 3000",
+    "ios": "expo run:ios",
+    "postinstall": "node scripts/patch-query-string.cjs"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@react-native-community/netinfo": "12.0.1",
+    "expo": "~57.0.0",
+    "expo-constants": "~57.0.20",
+    "expo-document-picker": "~57.0.3",
+    "expo-file-system": "~57.0.7",
+    "expo-font": "~57.0.4",
+    "expo-image-picker": "~57.0.20",
+    "expo-linking": "~57.0.11",
+    "expo-location": "~57.0.20",
+    "expo-notifications": "~57.0.21",
+    "expo-router": "~57.0.24",
+    "expo-sqlite": "~57.0.3",
+    "expo-status-bar": "~57.0.1",
+    "expo-system-ui": "~57.0.4",
+    "leaflet": "1.9.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-webview": "13.16.1",
+    "zod": "^4.1.5",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/leaflet": "^1.9.21",
+    "@types/react": "~19.2.10",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~57.0.2",
+    "jest": "^29.7.0",
+    "jest-expo": "~57.0.5",
+    "json-server": "^0.17.4",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3"
+  },
+  "overrides": {
+    "xcode": {
+      "uuid": "11.1.1"
+    },
+    "decode-uri-component": "0.5.0"
+  }
+}
